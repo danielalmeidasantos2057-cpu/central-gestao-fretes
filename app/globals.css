@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #070b19;
+  --color-surface: #0c1330;
+  --color-surface-2: #111a3d;
+  --color-surface-3: #18234d;
+  --color-line: #1f2a55;
+  --color-line-strong: #33427a;
+  --color-foreground: #eef1fb;
+  --color-muted: #b6c0de;
+  --color-subtle: #8f9cc4;
+  --color-primary: #3b82f6;
+  --color-primary-hover: #5b97f8;
+  --color-violet: #8b5cf6;
+  --color-cyan: #22d3ee;
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-danger: #fb5174;
+  --color-success-fg: #7ce8a8;
+  --color-warning-fg: #fcd34d;
+  --color-danger-fg: #fdaabd;
+  --color-info-fg: #a5c8fd;
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    background-color: var(--color-background);
+    background-image: radial-gradient(1000px 480px at 0% -10%, rgb(59 130 246 / 0.08), transparent 60%);
+    background-attachment: fixed;
+    color: var(--color-foreground);
+    -webkit-font-smoothing: antialiased;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-cyan);
+    outline-offset: 2px;
+  }
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: none;
+  }
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(0.85);
+    cursor: pointer;
+  }
+  dialog::backdrop {
+    background: rgb(3 6 18 / 0.78);
+  }
+}
